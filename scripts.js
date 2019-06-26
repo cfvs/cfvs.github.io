@@ -1,5 +1,4 @@
 UpdateContests()
-
 var Contests = new Map()
 var Handles = new Set()
 
