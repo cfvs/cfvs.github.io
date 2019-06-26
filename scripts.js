@@ -4,7 +4,7 @@ var Contests = new Map()
 var Handles = new Set()
 
 function UpdateContests(){    
-    fetch('http://codeforces.com/api/contest.list')
+    fetch('https://codeforces.com/api/contest.list')
     .then(response => response.json())
     .then(data => {
         
@@ -20,7 +20,7 @@ function addHandle(){
     var handle = document.getElementById("handleInp").value
     if(handle == "" || Handles.has(handle)) return
 
-    fetch("http://codeforces.com/api/user.info?handles=" + handle)
+    fetch("https://codeforces.com/api/user.info?handles=" + handle)
     .then(response => response.json())
     .then(data => {
         var rating = data.result[0].rating
