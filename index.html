@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <title>CF Tool</title>
+</head>
+
+<body>
+    <div class="ui padded grid" style="height: 100vh">
+        <!--Left Column-->
+        <div class="six wide column" align="center" style="background-color: whitesmoke">
+
+            <div class="ui fluid big action input" style="padding-bottom: 20px">
+                <input type="text" placeholder="Handle..." id="handleInp">
+                <button class="ui button" onclick="addHandle()">Add</button>
+            </div>
+
+            <div style="overflow-y: scroll; display: block; max-height: 80vh;">
+                <table id="handleTable" class="ui celled striped table">
+                    <thead>
+                        <tr>
+                            <th>Handle</th>
+                            <th>Rating</th>
+                            <th width="10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!--Right Column-->
+        <div class="ten wide inverted black column">
+            <div style="padding-bottom: 20px">
+                <button class="ui inverted black fluid big button" onclick="ShowContests()">Show Contests</button>
+            </div>
+
+            <div style="overflow-y: scroll; display: block; max-height: 80vh; width: 100%">
+                <table id="contestTable" class="ui inverted black celled striped table">
+                    <thead>
+                        <tr>
+                            <th>Contest Name</th>
+                            <th width="15%">Contest Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
