@@ -1,4 +1,5 @@
 UpdateContests()
+
 var Contests = new Map()
 var Handles = new Set()
 
@@ -31,7 +32,7 @@ function addHandle(){
 
         row.insertCell(0).innerHTML = handle
         row.insertCell(1).innerHTML = rating
-        row.insertCell(2).innerHTML = '<a onclick="removeHandle(this)"><i class="trash alternate outline icon"></i></a>'       
+        row.insertCell(2).innerHTML = '<a onclick="removeHandle(this)"><img src="trash.svg" style="width: 20px; height: 20px;"></a>'       
     })
 }
 
@@ -62,13 +63,13 @@ function ShowContests() {
     
     Promise.all(fetches)
     .then(function(){
-        $("#contestTable tr").remove();
+        $('#contestTable tr').not(function(){ return !!$(this).has('th').length; }).remove();
     Contests.forEach((value, key, map) => {
         if(!AttContests.has(key)){
         
             var contestTable = document.getElementById("contestTable")
             var row = contestTable.insertRow(-1)
-
+            
             row.insertCell(0).innerHTML = '<a href="https://codeforces.com/contest/' + key + '">' + value + '</a>'
             row.insertCell(1).innerHTML = key
         }
