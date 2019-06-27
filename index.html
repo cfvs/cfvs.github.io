@@ -6,61 +6,58 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-    <title>CF Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    
+    <title>CodeForces Virtual Contest Selector</title>
 </head>
 
 <body>
-    <div class="ui padded grid" style="height: 100vh">
-        <!--Left Column-->
-        <div class="six wide column" align="center" style="background-color: whitesmoke">
-
-            <div class="ui fluid big action input" style="padding-bottom: 20px">
-                <input type="text" placeholder="Handle..." id="handleInp">
-                <button class="ui button" onclick="addHandle()">Add</button>
-            </div>
-
-            <div style="overflow-y: scroll; display: block; max-height: 80vh;">
-                <table id="handleTable" class="ui celled striped table">
-                    <thead>
-                        <tr>
-                            <th>Handle</th>
-                            <th>Rating</th>
-                            <th width="10%"></th>
-                        </tr>
-                    </thead>
+    <div class="container-fluid">
+        <div class="row" style="height: 100vh;">
+            <!--Left Column-->
+            <div class="col-md-5" style="padding: 15px;">
+                <div class="input-group md rounded-lg">
+                    <input type="text" class="form-control" placeholder="Handle..." id="handleInp">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary rounded-right" type="button" onclick="addHandle()">Add</button>
+                    </div>
+                </div>
+            <br>
+            <div class="table-responsive" style="max-height: 85vh; overflow-y: auto">
+                <table class="table table-bordered table-striped" id="handleTable">
+                    <thead><tr>
+                        <th scope="col" style="width: 69%">Handle</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col" style="width: 10%"></th>
+                    </tr></thead>
                     <tbody>
-
                     </tbody>
                 </table>
             </div>
-
+        
         </div>
 
-        <!--Right Column-->
-        <div class="ten wide inverted black column">
-            <div style="padding-bottom: 20px">
-                <button class="ui inverted black fluid big button" onclick="ShowContests()">Show Contests</button>
-            </div>
 
-            <div style="overflow-y: scroll; display: block; max-height: 80vh; width: 100%">
-                <table id="contestTable" class="ui inverted black celled striped table">
-                    <thead>
-                        <tr>
-                            <th>Contest Name</th>
-                            <th width="15%">Contest Code</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <!--Right Column-->
+            <div class="col-md bg-dark" style="padding: 15px">
+                <button type="button" class="btn btn-outline-light btn-block btn-md" onclick="ShowContests()">Show</button>
+                <br>
 
-                    </tbody>
-                </table>
-            </div>
+                <div class="table-responsive" style="max-height: 85vh; overflow-y: auto">
+                        <table class="table table-bordered table-dark table-striped" id="contestTable">
+                            <thead><tr>
+                                <th scope="col">Name</th>
+                                <th scope="col" style="width: 15%">Id</th>
+                            </tr></thead>
+                            <tbody>
 
+                            </tbody>
+                        </table>
+                </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 
