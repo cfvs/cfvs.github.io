@@ -70,7 +70,7 @@ function ShowContests() {
             var contestTable = document.getElementById("contestTable")
             var row = contestTable.insertRow(-1)
             
-            row.insertCell(0).innerHTML = '<a href="https://codeforces.com/contest/' + key + '">' + value + '</a>'
+            row.insertCell(0).innerHTML = '<a href="https://codeforces.com/contest/' + key + '" target="_blank">' + value + '</a>'
             row.insertCell(1).innerHTML = key
         }
     })
