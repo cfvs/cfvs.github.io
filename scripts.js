@@ -32,7 +32,7 @@ function addHandle(){
 
         row.insertCell(0).innerHTML = handle
         row.insertCell(1).innerHTML = rating
-        row.insertCell(2).innerHTML = '<a onclick="removeHandle(this)"><img src="trash.svg" style="width: 20px; height: 20px;"></a>'       
+        row.insertCell(2).innerHTML = '<i class="trash icon" onclick="removeHandle(this)"></i>'       
     })
 }
 
