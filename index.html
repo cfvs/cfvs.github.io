@@ -37,8 +37,13 @@
         </div>
 
         <div class="nine wide black column">
-            <button class="ui fluid big inverted button" onclick="ShowContests()">Show</button>
-
+            <div class="five ui buttons">
+                    <button class="ui big inverted button" id="Div. 1" onclick="SC(this.id)">Div. 1</button>
+                    <button class="ui big inverted button" id="Div. 2" onclick="SC(this.id)">Div. 2</button>
+                    <button class="ui big inverted button" id="Div. 3" onclick="SC(this.id)">Div. 3</button>
+                    <button class="ui big inverted button" id="Edu" onclick="SC(this.id)">Edu</button>
+                    <button class="ui big green inverted button" style="margin-left: 1%;" onclick="Show()">Show!</button>
+            </div>
             <div style="overflow-y: scroll; display: block; max-height: 85vh; margin-top: 2vh">
                 <table class="ui fluid striped table inverted" id="contestTable">
                     <thead>
