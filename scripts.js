@@ -2,6 +2,7 @@ UpdateContests()
 
 var Contests = new Map()
 var Handles = new Set()
+var ConType = new Set()
 
 function UpdateContests(){    
     fetch('https://codeforces.com/api/contest.list')
@@ -43,7 +44,14 @@ function removeHandle(btn) {
     row.parentNode.removeChild(row)  
 }
 
-function ShowContests() {
+function SC(buttonId) {
+    if (document.getElementById(buttonId).classList.contains('active')) ConType.delete(buttonId)
+    else ConType.add(buttonId)
+    document.getElementById(buttonId).classList.toggle('active')
+    document.getElementById(buttonId).blur()
+}
+
+function Show(){
     var AttContests = new Set()
     var fetches = []
 
@@ -64,14 +72,19 @@ function ShowContests() {
     Promise.all(fetches)
     .then(function(){
         $('#contestTable tr').not(function(){ return !!$(this).has('th').length; }).remove();
-    Contests.forEach((value, key, map) => {
-        if(!AttContests.has(key)){
+    Contests.forEach((contest_name, contest_id) => {
+        flag = true
+        ConType.forEach((type) => {
+            if(contest_name.indexOf(type) == -1) flag = false
+        })
+        
+        if(!AttContests.has(contest_id) && flag){
         
             var contestTable = document.getElementById("contestTable")
             var row = contestTable.insertRow(-1)
             
-            row.insertCell(0).innerHTML = '<a href="https://codeforces.com/contest/' + key + '" target="_blank">' + value + '</a>'
-            row.insertCell(1).innerHTML = key
+            row.insertCell(0).innerHTML = '<a href="https://codeforces.com/contest/' + contest_id + '" target="_blank">' + contest_name + '</a>'
+            row.insertCell(1).innerHTML = contest_id
         }
     })
     })
